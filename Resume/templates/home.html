@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<style>
+  .container {
+    border: 1px solid black;
+    margin: 10px auto; /* Set top and bottom margin to 100px and left and right margins to auto */
+    padding: 100px;
+    max-width: 600px; /* Optional: Limit the maximum width of the container */
+  }
+</style>
+<div class="container">
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.media}}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-primary">
+  </form>
+</div>
+{% endblock %}

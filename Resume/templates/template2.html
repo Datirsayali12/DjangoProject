@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    .container{
+        margin-top:10px;
+        border:1px solid black;
+        padding:10px;
+        display:grid;
+        height:800px;
+        width:830px;
+        grid-template-rows:130px 200px 200px 200px;
+        grid-template-columns:400px 400px;
+        row-gap:10px;
+        column-gap:10px;
+      
+
+    }
+
+    .item{
+        background-color:#FFEAA7;
+    }
+    .name{
+        display:flex;
+        gap:30px;
+        grid-column:span 2;
+    }
+    .head >p{
+        margin-top:10px;
+        text-align:center;
+        font-size:30px;
+    }
+    .right{
+        grid-row:span 3;
+        display:flex;
+        gap:10px;
+        flex-direction:column;
+        justify-content:center;
+    }
+    .left{
+        grid-row:span 3;
+        display:flex;
+        gap:100px;
+        flex-direction:column;
+        justify-content:center;
+    }
+    .per{
+        margin-left:20px;
+        background-color:white;
+        width:350px;
+        height:200px;
+    }
+    .obj{
+        margin-left:20px;
+        background-color:white;
+        width:350px;
+        height:100px;
+    }
+    .skills{
+        margin-left:20px;
+        background-color:white;
+        width:350px;
+        height:200px;
+    }
+    .education{
+        margin-left:20px;
+        background-color:white;
+        width:350px;
+        height:200px;
+    }
+    .project{
+        margin-left:20px;
+        background-color:white;
+        width:350px;
+        height:200px;
+    }
+
+    .photo{
+        border:1px solid black;
+        width:120px;
+        height:120px;
+        border-radius:100px;
+        background-color:white;
+    }
+    .head{
+        margin-top:13px;
+        width:560px;
+        height:100px;
+        background-color:white;
+
+    }
+    .photo >img{
+        height:120px;
+        width:120px;
+        border-radius:100px;
+    }
+
+   </style>
+
+<div class="container">
+    <div class="item name">
+        <div class="photo">
+            <img src="{{last_object.photo.url}}">  
+        </div>
+        <div class="head">
+            <p>{{last_object.name}}</p>
+        </div>
+    </div>
+
+    <div class="item right">
+        <div class="per">
+            <p><b>Name:</b>{{last_object.name}}</p>
+            <p><b>Phone:</b>{{last_object.phone}}</p>
+            <p><b>Email:</b>{{last_object.email}}</p>
+            <p><b>Address:</b>{{last_object.address}}</p>
+        </div>
+        <div class="obj">
+            <p><b>Objective:</b>my goal is to improve company reputations</p>
+        </div>
+        <div class="skills">
+            <p><b>Skills:</b></p>
+            <p>{{last_object.skills}}</p> 
+        </div>
+    </div>
+
+    <div class="item left">
+        <div class="education"><p><b>Education:</b><br>{{last_object.education}}</div>
+        <div class="project"><p><b>Project:</b><br>{{last_object.projects}}</p></div>
+        
+    </div>
+   
+    
+    
+
+</div>
+<button>Download</button>
+{% endblock %}

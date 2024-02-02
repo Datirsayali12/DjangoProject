@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .container{
+        height:900px;
+        width:800px;
+        border:1px solid black;
+        margin-top:50px;
+        margin-bottom:50px;
+       
+    }
+
+    .upper{
+        margin-top:10px;
+        display:flex;
+        gap:50px;
+        
+    }
+    .photo{
+        margin-left:20px;
+        height:120px;
+        width:120px;
+        border:1px solid black;
+        
+    }
+
+    .name{
+        padding:10px;
+        height:100px;
+        width:500px;
+        align-self:center;
+        text-transform: uppercase;
+    }
+    .name >p{
+        margin-top:10px;
+        text-align:center;
+        font-size:30px;
+    }
+    .bottom{
+        display:flex;
+        margin-top:30px;
+        width:770px;
+        height:700px;
+        margin-left:0px;
+        padding:10px;
+       
+    }
+    .right{
+        display:flex;
+        gap:30px;
+        flex-direction:column;
+        justify-content:center;
+        border:1px solid black;
+        width:370px;
+        height:680px;
+        background-color:#40A2D8;
+       
+    }
+
+    .left{
+        display:flex;
+        gap:70px;
+        border:1px solid black;
+        width:370px;
+        height:680px;
+        flex-direction:column;
+        justify-content:center;
+       
+    }
+    .personal{
+        margin-left:20px;
+        width:300px;
+        height:320px;
+        background-color:white;
+    }
+
+    .personal>p{
+        margin-top:30px;
+        text-align:center;
+        font-size:20px;
+
+    }
+    
+    .objective{
+        margin-left:20px;
+        width:300px;
+        height:70px;
+        background-color:white;
+
+    }
+    .objective>p{
+        font-size:20px;
+    }
+
+    .skills{
+        margin-left:20px;
+        width:300px;
+        height:200px;
+        background-color:white;
+    }
+    .skills>p{
+        margin-top:20px;
+        text-align:left;
+        font-size:20px;
+
+    }
+
+    .education{
+        margin-left:20px;
+        width:300px;
+        height:360px;
+    }
+    .education>p{
+        margin-top:20px;
+        text-align:left;
+        font-size:20px;
+
+    }
+    .project{
+        margin-left:20px;
+        width:300px;
+        height:200px;
+    }
+    .project>p{
+        margin-top:20px;
+        text-align:left;
+        font-size:20px;
+
+    }
+
+
+
+</style>
+<div class="container">
+    <div class="upper">
+        <div class="photo">
+            <img src="{{last_object.photo.url}}" height="120" width="120">
+        </div>
+        <div class="name"><p>{{last_object.name}}</p></div>
+    </div>
+    <div class="bottom">
+        <div class="right">
+            <div class="personal">
+                <p><b>Name:</b>{{last_object.name}}</p>
+                <p><b>Phone:</b>{{last_object.phone}}</p>
+                <p><b>Email:</b>{{last_object.email}}</p>
+                <p><b>Address:</b>{{last_object.address}}</p>
+            </div>
+            <div class="objective">
+                <p><b>Objective:</b>my goal is to improve company reputations</p>
+            </div>
+            <div class="skills">
+                <p><b>Skills:</b></p>
+                <p>{{last_object.skills}}</p>
+            </div>
+
+        </div>
+        <div class="left">
+            <div class="education"><p><b>Education:</b><br>{{last_object.education}}</p>
+            </div>
+            <div class="project"><p><b>Project:</b><br>{{last_object.projects}}</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<button>Download</button>
+{% endblock %}
